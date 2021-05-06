@@ -11,7 +11,7 @@ public class Main {
 		
 		
 		UserService userService = new UserManager(new InMemoryUserDao(),new GoogleLoggerManagerAdapter());
-	    userService.register(new User("Yusuf Enes","Aras","enesaras551@gmail.com","1234enes")); // Dogrulandi!
+	        userService.register(new User("Yusuf Enes","Aras","enesaras551@gmail.com","1234enes")); // Dogrulandi!
 		userService.register(new User("Yusuf Enes","Aras","enesaras551","1234enes")); // Yanlis girildi ve hata alindi.
 		
 		User user1 = new User("Yusuf Enes","Aras","enesaras551@gmail.com","1234enes");
