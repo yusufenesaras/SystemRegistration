@@ -1,3 +1,4 @@
+package SystemRegistration;
 import SystemRegistration.business.abstracts.UserService;
 import SystemRegistration.business.concretes.UserManager;
 import SystemRegistration.core.concretes.GoogleLoggerManagerAdapter;
