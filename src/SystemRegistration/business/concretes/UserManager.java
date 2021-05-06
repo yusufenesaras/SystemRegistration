@@ -42,7 +42,7 @@ public class UserManager implements UserService{
 	@Override
 	public void register(User user) {
 		if (user.getPassword().length() < 6) {
-            System.out.println("Þifreniz en az 6 karakter uzunluðunda olmalýdýr.");
+            System.out.println("Sifreniz en az 6 karakter uzunlugunda olmalidir.");
             return;
         }
 		
@@ -50,25 +50,25 @@ public class UserManager implements UserService{
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(user.getEmail());
         if (!matcher.matches()) {
-            System.out.println("Mail adresi e posta formatýnda olmalýdýr: example@example.com");
+            System.out.println("Mail adresi e posta formatinda olmalidir: example@example.com");
             return;
         }
         
         if (userDao.getByEmail(user.getEmail()) != null){
-            System.out.println("Kullanýcý zaten mevcut!");
+            System.out.println("Kullanici zaten mevcut!");
             return;
         }
         
         if (user.getFirstName().length() < 2 || user.getLastName().length() < 2){
-            System.out.println("Ýsim ve Soyisim 2 karakterden uzun olmalýdýr");
+            System.out.println("Isim ve Soyisim 2 karakterden uzun olmalidir");
             return;
         }
         
         try (Scanner scanner = new Scanner(System.in)) {
-			System.out.println("E-Maili doðrulamak için 1'e basýn.");
+			System.out.println("E-Maili doÃ°rulamak iÃ§in 1'e basÃ½n.");
 			int  selecetion = scanner.nextInt();
 			if (selecetion != 1){
-			    System.out.println("Hata :  doðrulama baþarýsýz");
+			    System.out.println("Hata :  dogrulama basarisiz");
 			    return;
 			}
 		}
@@ -81,12 +81,12 @@ public class UserManager implements UserService{
 	@Override
 	public void login(User user) {
 		 if (user.getEmail() == null || user.getPassword() == null){
-	            System.out.println("Email ve password zorunlu alandýr");
+	            System.out.println("Email ve password zorunlu alandÃ½r");
 	            return;
 	        }
 		 
 	        if (userDao.getByEmail(user.getEmail()) == null){
-	            System.out.println("Kullanýcý bulunamadý.");
+	            System.out.println("Kullanici bulunamadi.");
 	            return;
 	        }
 	        
