@@ -97,7 +97,7 @@ public class UserManager implements UserService{
 	@Override
 	public void delete(User user) {
 		userDao.delete(user);
-		System.out.println("Kullanici silindi.");
+		
 		
 	}
 
