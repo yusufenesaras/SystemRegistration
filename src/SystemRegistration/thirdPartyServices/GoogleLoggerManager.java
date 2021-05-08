@@ -8,7 +8,7 @@ public class GoogleLoggerManager {
 		System.out.println("Google ile giris yapildi. " + message);
 	}
 	public void register(User user){ 
-        System.out.println("Kullanýcý Google ile eklendi : " + user.getFirstName() + 
+        System.out.println("Kullanici Google ile eklendi : " + user.getFirstName() + 
         		" " + user.getLastName().toUpperCase());
     } 
 }
